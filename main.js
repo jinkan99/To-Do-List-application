@@ -5,7 +5,7 @@ const tasks = document.getElementsByClassName('tasks');
 addBtn.addEventListener('click',()=>{
   if(input.value.length !== 0){
     const template = `
-    <div class="task-list">
+    <div class="task-details">
       <div class="task">
         <label>${input.value}</label>
       </div>
@@ -16,6 +16,7 @@ addBtn.addEventListener('click',()=>{
     </div>`
 
     const ele = document.createElement('div');
+    ele.classList.add('new-task');
     ele.innerHTML = template;
     tasks[0].appendChild(ele);
     input.value = "";
@@ -28,13 +29,13 @@ addBtn.addEventListener('click',()=>{
 
 tasks[0].addEventListener('click', (e)=>{
   if(e.target.classList.contains('fa-clipboard-check')){
-    e.target.closest('.task-list').querySelector('.task').classList.add('completed');
+    e.target.closest('.new-task').querySelector('.task').classList.add('completed');
   }
 });
 
 tasks[0].addEventListener('click', (e)=>{
   if(e.target.classList.contains('fa-eraser')){
-    e.target.closest('.task-list').remove();
+    e.target.closest('.new-task').remove();
   }
 });
 

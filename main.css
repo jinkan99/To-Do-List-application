@@ -49,7 +49,7 @@ input[type="text"]{
   background-color: navajowhite;;
 }
 
-.task-list{
+.task-details{
   display: grid;
   grid-template-columns: 20fr 1fr 1fr;
   margin-top: 10px;
